@@ -18,11 +18,11 @@
   background-image: var(--bg-img);
   background-attachment: fixed;
   background-size: cover;
-  padding-block-start: 100px;
+  padding-block: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100px
+  gap: 100px;
 }
 
 .header {
@@ -51,20 +51,163 @@
   flex-direction: column;
   align-items: center;
   inline-size: var(--height);
-  background-color:#fff;
+  background-color: #fff;
+  gap: 50px;
 }
 
 .card-title {
   border: var(--border);
+  padding-inline: 10px;
+  font-size: var(--text-size);
 }
 
-.text-container {
-  border: var(--border);
+.card-img {
+  position: relative;
 }
 
 .article-img {
+  display: block;
   max-inline-size: 100%;
   object-fit: cover;
   border-inline: var(--border);
-  transform: 
+}
+
+.vatermark-img {
+  position: absolute;
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  font-size: 14px;
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow:
+    -1px 0 var(--shadow-colors, #fff),
+    0 1px var(--shadow-colors, #fff),
+    1px 0 var(--shadow-colors, #fff),
+    0 -1px var(--shadow-colors, #fff);
+}
+
+@supports (text-stroke: 1px var(--shadow-colors, #fff)) {
+  .vatermark-img {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--shadow-colors, #fff);
+    text-stroke: 1px var(--shadow-colors, #fff);
+  }
+}
+
+.card-content {
+  border: var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.text-container {
+  padding: 25px;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-size);
+  line-height: 21px;
+}
+
+.buttons-conteiner {
+  display: flex;
+  gap: 12px;
+  margin: 0 25px 25px auto;
+}
+
+.card__like-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  
+}
+
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.button__text {
+  font-size: 14px;
+  line-height: 90%;
+  font-family: var(--accent-font);
+  border: var(--border);
+  padding: 12.5px 37px;
+}
+
+.close-button__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 90%;
+}
+
+.save-dialog {
+  display: none;
+  border: var(--border);
+  background-color: #fff;
+  max-inline-size: clamp(21.3125rem, 21.05rem + 1.13vw, 22.0625rem);
+  padding: 30px;
+  gap: 30px;
+}
+
+.save-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Надо починить горизонтальный скролл выше 1100px и доделать анимации*/
+
+.save-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.save-message {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.save-message__text {
+  text-align: start;
+}
+
+.dialog-disket {
+  align-self: center;
+}
+
+.close-button {
+  border: var(--border);
+  padding: 12.5px clamp(7.28125rem, 6.93rem + 1.5vw, 8.28125rem);
+  background-color: transparent;
+  cursor: pointer;
+  align-self: center;
+}
+
+.save-button {
+  padding: clamp(1.0625rem, 0.99rem + 0.33vw, 1.28125rem);
+  background-color: #fff;
+  border: var(--border);
+  cursor: pointer;
+}
+
+.save-button__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 90%;
+  padding-inline-start : 8px;
 }
