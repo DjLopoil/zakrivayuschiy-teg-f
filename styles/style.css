@@ -13,4 +13,58 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+  font-variation-settings: "wght" var(--text-regular, 410);
+  background-image: var(--bg-img);
+  background-attachment: fixed;
+  background-size: cover;
+  padding-block-start: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px
+}
+
+.header {
+  display: grid;
+  gap: 20px;
+  font-family: var(--accent-font, "PressStart2P"), fantasy;
+  text-transform: uppercase;
+  inline-size: var(--height);
+  background-color: #fff;
+  align-content: center;
+  text-align: center;
+  border: var(--border);
+  padding: var(--padding);
+}
+
+.header-title {
+  font-size: var(--header-title);
+}
+
+.header-subtitle {
+  font-size: var(--header-subtitle);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  inline-size: var(--height);
+  background-color:#fff;
+}
+
+.card-title {
+  border: var(--border);
+}
+
+.text-container {
+  border: var(--border);
+}
+
+.article-img {
+  max-inline-size: 100%;
+  object-fit: cover;
+  border-inline: var(--border);
+  transform: 
 }
