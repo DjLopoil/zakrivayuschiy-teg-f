@@ -10,9 +10,12 @@
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
   --header-title: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   --header-subtitle: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
-  --height: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  --width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  --height: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
   --padding: clamp(7.625rem, 7.4489rem + 0.7512vw, 8.125rem) 0;
   --border: 2px solid #000;
   --text-size: 18px;
   --shadow-colors: #fff;
+  --padding-page: 25px;
+  --white-text: #fff;
 }

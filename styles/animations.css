@@ -9,8 +9,3 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-.button__text:hover {
-  color: #fff;
-  transition: 0.3s;
-  background-color:#000;
-}
