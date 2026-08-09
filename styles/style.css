@@ -137,9 +137,7 @@
 
 .card__icon-button {
   display: flex;
-  border: none;
   background-color: transparent;
-  padding: 0;
   align-items: center;
   border: 2px solid transparent;
   padding: 7px 5.5px;
@@ -301,6 +299,5 @@
 .img-transformation {
   filter: hue-rotate(180deg) saturate(2);
 }
-
 
 /*P.S. Доделай цвет дискеты при наведении и анимацию сердечка.*/
