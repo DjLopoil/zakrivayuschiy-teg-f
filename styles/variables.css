@@ -15,7 +15,15 @@
   --padding: clamp(7.625rem, 7.4489rem + 0.7512vw, 8.125rem) 0;
   --border: 2px solid #000;
   --text-size: 18px;
-  --shadow-colors: #fff;
+  --shadow-vatermark: #fff;
   --padding-page: 25px;
-  --white-text: #fff;
+  --hover-text: #fff;
+  --bg-color: #fff;
+  --bg-hover-text: #000;
+  --main-text: #000;
+  --bg-btn-hover: #000;
+  --btn-shaddow: #000;
+  --heart-color: #000;
+  --animation-fill-color: #ff0000;
+  --contour-color: #ff0000;
 }

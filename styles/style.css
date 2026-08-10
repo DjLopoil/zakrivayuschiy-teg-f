@@ -31,7 +31,7 @@
   font-family: var(--accent-font, "PressStart2P"), fantasy;
   text-transform: uppercase;
   inline-size: var(--width);
-  background-color: #fff;
+  background-color: var(--bg-color, #fff);
   align-content: center;
   text-align: center;
   border: var(--border);
@@ -51,7 +51,7 @@
   flex-direction: column;
   align-items: center;
   inline-size: var(--width);
-  background-color: #fff;
+  background-color: var(--bg-color, #fff);
   gap: 50px;
 }
 
@@ -76,10 +76,6 @@
   z-index: 1;
 }
 
-.zero-sprint {
-  object-position: right;
-}
-
 .vatermark-img {
   position: absolute;
   inset-block-start: var(--padding-page, 25px);
@@ -87,22 +83,22 @@
   font-size: 14px;
   font-family: var(--accent-font);
   text-transform: uppercase;
-  color: #000;
+  color: var(--main-text, #000);
   opacity: 0.5;
   mix-blend-mode: hard-light;
   text-shadow:
-    -1px 0 var(--shadow-colors, #fff),
-    0 1px var(--shadow-colors, #fff),
-    1px 0 var(--shadow-colors, #fff),
-    0 -1px var(--shadow-colors, #fff);
+    -1px 0 var(--shadow-vatermark, #fff),
+    0 1px var(--shadow-vatermark, #fff),
+    1px 0 var(--shadow-vatermark, #fff),
+    0 -1px var(--shadow-vatermark, #fff);
   z-index: 2;
 }
 
-@supports (text-stroke: 1px var(--shadow-colors, #fff)) {
+@supports (text-stroke: 1px var(--shadow-vatermark, #fff)) {
   .vatermark-img {
     text-shadow: none;
-    -webkit-text-stroke: 1px var(--shadow-colors, #fff);
-    text-stroke: 1px var(--shadow-colors, #fff);
+    -webkit-text-stroke: 1px var(--shadow-vatermark, #fff);
+    text-stroke: 1px var(--shadow-vatermark, #fff);
   }
 }
 
@@ -133,6 +129,7 @@
   background-color: transparent;
   border: var(--border);
   padding: 12.5px 37px;
+  cursor: pointer;
 }
 
 .card__icon-button {
@@ -141,6 +138,76 @@
   align-items: center;
   border: 2px solid transparent;
   padding: 7px 5.5px;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+.contour {
+  transition: fill 0.1s linear 0s;
+}
+
+.core {
+  transition: fill 0.3s linear 0.3s;
+}
+
+.main-body {
+  transition: fill 0.3s linear 0s;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.like-icon {
+  transform-origin: center;
+}
+
+.like-icon:hover .core {
+  --animation-fill-color: #000;
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
+.like-icon:hover .main-body {
+  --animation-fill-color: #000;
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon:active .core {
+  --animation-fill-color: #ff0000;
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
+.like-icon:active .main-body {
+  --animation-fill-color: #ff0000;
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition-duration: 0.3s;
+  transition-delay: 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale 0.1s ease-in 0.3s forwards;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s forwards;
 }
 
 .card__icon-button:focus-visible {
@@ -163,7 +230,7 @@
 .save-dialog {
   display: none;
   border: var(--border);
-  background-color: #fff;
+  background-color: var(--bg-color, #fff);
   max-inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   padding: 30px;
   gap: 30px;
@@ -218,7 +285,7 @@
   align-items: center;
   gap: 8px;
   padding: 17px 20px;
-  background-color: #fff;
+  background-color: var(--bg-color, #fff);
   border: var(--border);
   cursor: pointer;
 }
@@ -232,6 +299,11 @@
     width: 28px;
     height: 28px;
   }
+}
+
+.disket-button {
+  filter: invert(1);
+  mix-blend-mode: difference;
 }
 
 .save-button__text {
@@ -250,7 +322,7 @@
 .button-black::before {
   content: "";
   position: absolute;
-  background-color: #000;
+  background-color: var(--bg-btn-hover, #000);
   inset: 0;
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
@@ -262,13 +334,19 @@
 
 .button-black:focus-visible {
   outline: none;
-  box-shadow: 2px 2px 0px 0px #000;
+  box-shadow: 2px 2px 0px 0px var(--btn-shaddow, #000);
 }
 
 .white-text {
   mix-blend-mode: difference;
-  color: var(--white-text, #fff);
-  background-color: #000;
+  color: var(--hover-text, #fff);
+  background-color: var(--bg-hover-text, #000);
+  font-weight: normal;
+}
+
+.zero-sprint {
+  object-position: right;
+  filter: saturate(0.5);
 }
 
 .first-difficulty {
@@ -299,5 +377,3 @@
 .img-transformation {
   filter: hue-rotate(180deg) saturate(2);
 }
-
-/*P.S. Доделай цвет дискеты при наведении и анимацию сердечка.*/
