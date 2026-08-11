@@ -19,11 +19,14 @@
   --padding-page: 25px;
   --hover-text: #fff;
   --bg-color: #fff;
+  --bg-btn-color: #fff;
   --bg-hover-text: #000;
   --main-text: #000;
   --bg-btn-hover: #000;
   --btn-shaddow: #000;
   --heart-color: #000;
   --animation-fill-color: #ff0000;
+  --animation-fill-color-hover: #000;
+  --fill-transparent: transparent;
   --contour-color: #ff0000;
 }
