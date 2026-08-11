@@ -22,7 +22,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100px;
+  gap: 94px;
+}
+
+@media (width <= 375px) {
+  .page{
+    gap: 97px;
+  }
 }
 
 .header {
@@ -122,14 +128,12 @@
 
 .buttons-container {
   display: flex;
-  gap: 7px;
   padding-inline-end: var(--padding-page, 25px);
-  padding-block-end: var(--padding-page, 25px);
+  padding-block-end: 22px;
 }
 
 .card__like-button {
   inline-size: 130px;
-  padding-block: 12.5px;
   cursor: pointer;
 }
 
@@ -138,7 +142,6 @@
   background-color: transparent;
   align-items: center;
   border: 2px solid transparent;
-  padding: 7px 5.5px;
   cursor: pointer;
   transition: border 0.3s ease;
 }
@@ -282,11 +285,13 @@
   gap: 8px;
   padding: 17px 20px;
   cursor: pointer;
+  margin-block-start: -46px;
 }
 
 @media (width <= 375px) {
   .save-button {
     flex-direction: column;
+    margin-block-start: -49px;
   }
 
   .disket-button {
