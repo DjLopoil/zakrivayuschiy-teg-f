@@ -22,13 +22,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 94px;
-}
-
-@media (width <= 375px) {
-  .page {
-    gap: 97px;
-  }
 }
 
 .header {
@@ -42,6 +35,13 @@
   text-align: center;
   border: var(--border);
   padding: var(--padding);
+  margin-block-end: 94px;
+}
+
+@media (width <= 375px) {
+  .header {
+    margin-block-end: 97px;
+  }
 }
 
 .header-title {
@@ -57,8 +57,11 @@
   flex-direction: column;
   align-items: center;
   inline-size: var(--width);
-  background-color: var(--bg-color, #fff);
   gap: 50px;
+}
+
+.card {
+  background-color: var(--bg-color, #fff);
 }
 
 .card-title {
@@ -101,7 +104,7 @@
   z-index: 2;
 }
 
-@supports (text-stroke: 1px var(--shadow-vatermark, #fff)) and
+@supports (text-stroke: 1px var(--shadow-vatermark, #fff)) or
   (-webkit-text-stroke: 1px var(--shadow-vatermark, #fff)) {
   .vatermark-img {
     text-shadow: none;
@@ -285,13 +288,13 @@
   gap: 8px;
   padding: 17px 20px;
   cursor: pointer;
-  margin-block-start: -46px;
+  margin-block-start: 48px;
 }
 
 @media (width <= 375px) {
   .save-button {
     flex-direction: column;
-    margin-block-start: -49px;
+    margin-block-start: 45px;
   }
 
   .disket-button {
@@ -351,16 +354,16 @@
 }
 
 .elementary-difficulty {
-  filter: hue-rotate(-60deg) saturate(2);
+  filter: hue-rotate(-60deg) saturate(2) brightness(0.5);
 }
 
 .img-why-not {
-  filter: saturate(37%) blur(1px) contrast(1.1);
+  filter: saturate(37%) blur(1px) contrast(1.1) brightness(0.8);
   mix-blend-mode: multiply;
 }
 
 .img-ideal {
-  filter: brightness(0.8) contrast(2.5);
+  filter: brightness(0.5) grayscale(1);
 }
 
 .difficulties {
@@ -368,13 +371,13 @@
 }
 
 .img-concetration {
-  filter: hue-rotate(-100deg) blur(1px);
+  filter: hue-rotate(-100deg) blur(1px) brightness(0.7);
 }
 
 .img-questions {
-  filter: brightness(1.5) grayscale(1);
+  filter: brightness(1.5) grayscale(1) brightness(0.7);
 }
 
 .img-transformation {
-  filter: hue-rotate(180deg) saturate(2);
+  filter: hue-rotate(180deg) saturate(2) brightness(0.8);
 }
